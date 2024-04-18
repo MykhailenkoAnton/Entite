@@ -27,9 +27,15 @@
     <ClInclude Include="src\Entite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Entite\Log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entite\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Entite\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

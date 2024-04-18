@@ -6,7 +6,9 @@ extern Entite::Application* Entite::CreateApplication();
 
 int main(int argc, char** argv)
 {
-	//Entite::Log::Init();
+	Entite::Log::Init();
+	ENT_CORE_WARN("Initializer log!");
+	ENT_INFO("123...!");
 
 	auto app = Entite::CreateApplication();
 	app->Run();
