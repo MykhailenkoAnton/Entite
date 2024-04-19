@@ -4,6 +4,7 @@
 
 #include "Core.h"
 #include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 
 namespace Entite {
 
@@ -30,7 +31,7 @@ namespace Entite {
 #define ENT_CORE_FATAL(...)		::Entite::Log::GetCoreLogger()->fatal(__VA_ARGS__)
 
 // Client log macros
-#define ENT_TRACE(...)		::Entite::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define ENT_TRACE(...)      ::Entite::Log::GetClientLogger()->trace(__VA_ARGS__)
 #define ENT_INFO(...)		::Entite::Log::GetClientLogger()->info(__VA_ARGS__)
 #define ENT_WARN(...)		::Entite::Log::GetClientLogger()->warn(__VA_ARGS__)
 #define ENT_ERROR(...)		::Entite::Log::GetClientLogger()->error(__VA_ARGS__)

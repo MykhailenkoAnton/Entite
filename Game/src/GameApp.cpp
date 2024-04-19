@@ -15,5 +15,6 @@ public:
 
 Entite::Application* Entite::CreateApplication()
 {
+	
 	return new Game();
 }

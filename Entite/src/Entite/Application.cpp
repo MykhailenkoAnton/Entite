@@ -1,5 +1,8 @@
 #include "Application.h"
 
+#include "Entite/Events/ApplicationEvent.h"
+#include "Entite/Log.h"
+
 namespace Entite {
 
 	Application::Application()
@@ -10,10 +13,14 @@ namespace Entite {
 	Application::~Application()
 	{
 
+
 	}
 
 	void Application::Run()
 	{
+		WindowResizeEvent e(1280, 720);
+		HZ_TRACE(e);
+
 		while (true)
 		{
 

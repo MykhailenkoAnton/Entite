@@ -9,3 +9,6 @@
 #else
 #error ENTITE ONLY SUPPORTS WINDOWS!
 #endif //ENT_PLATFORM_WINDOWS
+
+
+#define BIT(x) (1 << x)
