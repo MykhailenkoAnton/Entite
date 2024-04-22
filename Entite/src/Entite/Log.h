@@ -4,6 +4,7 @@
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"
 
+
 namespace Entite {
 
 	class ENTITE_API Log
@@ -20,6 +21,8 @@ namespace Entite {
 		static std::shared_ptr<spdlog::logger> s_ClientLogger;
 	};
 }
+
+
 
 // Core log macros
 #define ENT_CORE_TRACE(...)		::Entite::Log::GetCoreLogger()->trace(__VA_ARGS__)

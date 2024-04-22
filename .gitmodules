@@ -1,3 +1,6 @@
 [submodule "Entite/vendor/spdlog"]
 	path = Entite/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Entite/vendor/GLFW"]
+	path = Entite/vendor/GLFW
+	url = https://github.com/TheCherno/GLFW

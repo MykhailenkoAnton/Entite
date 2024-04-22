@@ -10,6 +10,12 @@ workspace "Entite"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include dirs relative the root folder (sol dir)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Entite/vendor/GLFW/include"
+
+include "Entite/vendor/GLFW"
+
 project "Entite"
 	location "Entite"
 	kind "SharedLib"
@@ -30,7 +36,15 @@ project "Entite"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib",
+		"dwmapi.lib"
 	}
 
 	filter "system:windows"

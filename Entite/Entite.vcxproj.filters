@@ -35,6 +35,8 @@
       <Filter>Entite</Filter>
     </ClInclude>
     <ClInclude Include="src\entpch.h" />
+    <ClInclude Include="src\Entite\Window.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entite\Application.cpp">
@@ -44,5 +46,6 @@
       <Filter>Entite</Filter>
     </ClCompile>
     <ClCompile Include="src\entpch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

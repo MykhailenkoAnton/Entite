@@ -11,4 +11,13 @@
 #endif //ENT_PLATFORM_WINDOWS
 
 
+#ifdef ENT_ENABLE_ASSERTS
+	#define ENT_ASSERT(x, ...) {if(!(x)) {ENT_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak; } }
+	#define ENT_CORE_ASSERT(x, ...) {if(!(x)) {ENT_CORE_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak; } }
+#else
+	#define ENT_ASSERT(x, ...)
+	#define ENT_CORE_ASSERT(x, ...)
+#endif // ENT_ENABLE_ASSERTS
+
+
 #define BIT(x) (1 << x)
