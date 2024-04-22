@@ -34,6 +34,7 @@
     <ClInclude Include="src\Entite\Log.h">
       <Filter>Entite</Filter>
     </ClInclude>
+    <ClInclude Include="src\entpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entite\Application.cpp">
@@ -42,5 +43,6 @@
     <ClCompile Include="src\Entite\Log.cpp">
       <Filter>Entite</Filter>
     </ClCompile>
+    <ClCompile Include="src\entpch.cpp" />
   </ItemGroup>
 </Project>

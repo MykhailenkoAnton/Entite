@@ -1,10 +1,6 @@
 #pragma once
-
+#include "entpch.h"
 #include "Entite/Core.h"
-
-#include <string>
-#include <functional>
-#include <iostream>
 
 namespace Entite {
 

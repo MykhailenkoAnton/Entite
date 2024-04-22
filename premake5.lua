@@ -18,6 +18,9 @@ project "Entite"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "entpch.h"
+	pchsource "Entite/src/entpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",

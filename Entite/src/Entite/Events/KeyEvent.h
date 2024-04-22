@@ -1,8 +1,6 @@
 #pragma once
-
+#include "entpch.h"
 #include "Event.h"
-
-#include <sstream>
 
 namespace Entite {
 

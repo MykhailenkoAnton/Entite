@@ -1,3 +1,4 @@
+#include "entpch.h"
 #include "Application.h"
 
 #include "Entite/Events/ApplicationEvent.h"
@@ -19,7 +20,7 @@ namespace Entite {
 	void Application::Run()
 	{
 		WindowResizeEvent e(1280, 720);
-		HZ_TRACE(e);
+		ENT_CORE_TRACE(e);
 
 		while (true)
 		{
