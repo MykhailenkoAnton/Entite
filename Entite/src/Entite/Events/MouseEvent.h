@@ -24,10 +24,10 @@ namespace Entite {
 		float m_MouseX, m_MouseY;
 	};
 
-	class ENTITE_API MouseScrolled : public Event
+	class ENTITE_API MouseScrolledEvent : public Event
 	{
 	public:
-		MouseScrolled(float x, float y) : m_XOffset(x), m_YOffset(y) {}
+		MouseScrolledEvent(float x, float y) : m_XOffset(x), m_YOffset(y) {}
 
 		inline float GetX() const { return m_XOffset; }
 		inline float GetY() const { return m_YOffset; }
