@@ -65,14 +65,17 @@ project "Entite"
 
 	filter "configurations:Debug"
 		defines "ENT_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ENT_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ENT_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Game"
@@ -112,12 +115,15 @@ project "Game"
 
 	filter "configurations:Debug"
 		defines "ENT_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ENT_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ENT_DIST"
+		buildoptions "/MD"
 		optimize "On"
