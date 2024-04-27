@@ -1,5 +1,6 @@
 workspace "Entite"
 	architecture "x64"
+	startproject "Game"
 
 	configurations
 	{
@@ -17,10 +18,13 @@ IncludeDir["Glad"] = "Entite/vendor/Glad/include"
 --IncludeDir["ImGui"] = "Entite/vendor/imgui"
 IncludeDir["ImGuiOrig"] = "Entite/vendor/imguiOrig"
 
-include "Entite/vendor/GLFW"
-include "Entite/vendor/Glad"
---include "Entite/vendor/imgui"
-include "Entite/vendor/imguiOrig"
+group "Dependencies"
+	include "Entite/vendor/GLFW"
+	include "Entite/vendor/Glad"
+	--include "Entite/vendor/imgui"
+	include "Entite/vendor/imguiOrig"
+
+group ""
 
 project "Entite"
 	location "Entite"
@@ -74,7 +78,8 @@ project "Entite"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Game")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Game/\"")
+			-- old ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Game")
 		}
 
 	filter "configurations:Debug"
