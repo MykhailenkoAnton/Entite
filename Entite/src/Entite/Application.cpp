@@ -36,7 +36,9 @@ namespace Entite {
 		{
 			(*--it)->OnEvent(e);
 			if (e.Handled)
+			{
 				break;
+			}
 		}
 	}
 

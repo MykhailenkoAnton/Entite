@@ -18,7 +18,7 @@ namespace Entite {
 			return ss.str();
 		}
 
-		EVENT_CLASS_TYPE(NouseMoved)
+		EVENT_CLASS_TYPE(MouseMoved)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	private:
 		float m_MouseX, m_MouseY;
@@ -29,8 +29,8 @@ namespace Entite {
 	public:
 		MouseScrolledEvent(float x, float y) : m_XOffset(x), m_YOffset(y) {}
 
-		inline float GetX() const { return m_XOffset; }
-		inline float GetY() const { return m_YOffset; }
+		inline float GetXOffset() const { return m_XOffset; }
+		inline float GetYOffset() const { return m_YOffset; }
 
 		std::string ToString() const override
 		{
@@ -39,7 +39,7 @@ namespace Entite {
 			return ss.str();
 		}
 
-		EVENT_CLASS_TYPE(NouseMoved)
+		EVENT_CLASS_TYPE(MouseScrolled)
 		EVENT_CLASS_CATEGORY(EventCategoryMouse | EventCategoryInput)
 	private:
 		float m_XOffset, m_YOffset;

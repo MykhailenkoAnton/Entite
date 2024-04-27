@@ -8,7 +8,7 @@ public:
 
 	void OnUpdate() override
 	{
-		ENT_INFO("ExampleLayer OnUpdate");
+		ENT_WARN("ExampleLayer OnUpdate");
 	}
 
 	void OnEvent(Entite::Event& event) override
