@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include dirs relative the root folder (sol dir)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Entite/vendor/GLFW/include"
+IncludeDir["Glad"] = "Entite/vendor/Glad/include"
 
 include "Entite/vendor/GLFW"
+include "Entite/vendor/Glad"
 
 project "Entite"
 	location "Entite"
@@ -37,12 +39,14 @@ project "Entite"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib",
 		"dwmapi.lib"
 	}
@@ -55,7 +59,8 @@ project "Entite"
 		defines
 		{
 			"ENT_PLATFORM_WINDOWS",
-			"ENTITE_BUILD_DLL"
+			"ENTITE_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
