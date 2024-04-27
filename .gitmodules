@@ -7,3 +7,6 @@
 [submodule "Entite/vendor/imgui"]
 	path = Entite/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "Entite/vendor/imguiOrig"]
+	path = Entite/vendor/imguiOrig
+	url = https://github.com/ocornut/imgui

@@ -14,11 +14,13 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Entite/vendor/GLFW/include"
 IncludeDir["Glad"] = "Entite/vendor/Glad/include"
-IncludeDir["ImGui"] = "Entite/vendor/imgui/include"
+--IncludeDir["ImGui"] = "Entite/vendor/imgui/include"
+IncludeDir["ImGuiOrig"] = "Entite/vendor/imguiOrig/include"
 
 include "Entite/vendor/GLFW"
 include "Entite/vendor/Glad"
-include "Entite/vendor/imgui"
+--include "Entite/vendor/imgui"
+include "Entite/vendor/imguiOrig"
 
 project "Entite"
 	location "Entite"
@@ -43,14 +45,16 @@ project "Entite"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		--"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGuiOrig}"
 	}
 
 	links
 	{
 		"GLFW",
 		"Glad",
-		"ImGui",
+		--"ImGui",
+		"ImGuiOrig",
 		"opengl32.lib",
 		"dwmapi.lib"
 	}
