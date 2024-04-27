@@ -15,7 +15,7 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "Entite/vendor/GLFW/include"
 IncludeDir["Glad"] = "Entite/vendor/Glad/include"
 --IncludeDir["ImGui"] = "Entite/vendor/imgui/include"
-IncludeDir["ImGuiOrig"] = "Entite/vendor/imguiOrig/include"
+IncludeDir["ImGuiOrig"] = "Entite/vendor/imguiOrig"
 
 include "Entite/vendor/GLFW"
 include "Entite/vendor/Glad"

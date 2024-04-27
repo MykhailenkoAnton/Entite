@@ -24,7 +24,8 @@ class Game : public Entite::Application
 public:
 	Game()
 	{
-		PushLayer(new ExampleLayer());
+		//PushLayer(new ExampleLayer());
+		PushOverlay(new Entite::ImGuiLayer());
 	}
 	~Game()
 	{
