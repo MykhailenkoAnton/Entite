@@ -10,6 +10,9 @@
 #error ENTITE ONLY SUPPORTS WINDOWS!
 #endif //ENT_PLATFORM_WINDOWS
 
+#ifdef ENT_DEBUG
+	#define ENT_ENABLE_ASSERTS
+#endif // ENT_DEBUG
 
 #ifdef ENT_ENABLE_ASSERTS
 	#define ENT_ASSERT(x, ...) {if(!(x)) {ENT_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak; } }

@@ -26,6 +26,7 @@ project "Entite"
 	location "Entite"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -61,7 +62,7 @@ project "Entite"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		--staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -78,23 +79,27 @@ project "Entite"
 
 	filter "configurations:Debug"
 		defines "ENT_DEBUG"
-		buildoptions "/MDd"
+		--buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ENT_RELEASE"
-		buildoptions "/MD"
+		--buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ENT_DIST"
-		buildoptions "/MD"
+		--buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 project "Game"
 	location "Game"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -118,7 +123,7 @@ project "Game"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		--staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -128,15 +133,18 @@ project "Game"
 
 	filter "configurations:Debug"
 		defines "ENT_DEBUG"
-		buildoptions "/MDd"
+		--buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "ENT_RELEASE"
-		buildoptions "/MD"
+		--buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "ENT_DIST"
-		buildoptions "/MD"
+		--buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
