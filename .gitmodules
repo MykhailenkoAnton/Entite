@@ -10,3 +10,6 @@
 [submodule "Entite/vendor/imguiOrig"]
 	path = Entite/vendor/imguiOrig
 	url = https://github.com/ocornut/imgui
+[submodule "Entite/vendor/glm"]
+	path = Entite/vendor/glm
+	url = https://github.com/g-truc/glm

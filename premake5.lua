@@ -17,6 +17,7 @@ IncludeDir["GLFW"] = "Entite/vendor/GLFW/include"
 IncludeDir["Glad"] = "Entite/vendor/Glad/include"
 --IncludeDir["ImGui"] = "Entite/vendor/imgui"
 IncludeDir["ImGuiOrig"] = "Entite/vendor/imguiOrig"
+IncludeDir["glm"] = "Entite/vendor/glm"
 
 group "Dependencies"
 	include "Entite/vendor/GLFW"
@@ -41,7 +42,10 @@ project "Entite"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl",
+		"%{prj.name}/vendor/glm/glm/**.cppm"
 	}
 
 	includedirs
@@ -51,7 +55,8 @@ project "Entite"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		--"%{IncludeDir.ImGui}"
-		"%{IncludeDir.ImGuiOrig}"
+		"%{IncludeDir.ImGuiOrig}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -118,7 +123,8 @@ project "Game"
 	includedirs
 	{
 		"Entite/vendor/spdlog/include",
-		"Entite/src"
+		"Entite/src",
+		"%{IncludeDir.glm}"
 	}
 
 	links
