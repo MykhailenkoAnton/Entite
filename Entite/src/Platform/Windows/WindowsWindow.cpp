@@ -5,7 +5,8 @@
 #include "Entite/Events/MouseEvent.h"
 #include "Entite/Events/KeyEvent.h"
 
-#include <glad/glad.h>
+#include "Platform/OpenGL/OpenGLContext.h"
+
 //#include <GLFW/glfw3.h>
 
 namespace Entite
@@ -34,7 +35,7 @@ namespace Entite
 		m_Data.Height = props.Height;
 
 		ENT_CORE_INFO("Creating window {0} {1}, {2}", props.Title, props.Width, props.Height);
-
+		
 		if (!s_GLFWInitialized)
 		{
 			int success = glfwInit();
@@ -44,9 +45,11 @@ namespace Entite
 		}
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		ENT_CORE_ASSERT(status, "Failed to initialize Glad!");
+
+		m_Context = new OpenGLContext(m_Window);
+		m_Context->Init();
+		// ^
+	
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSyc(true);
 
@@ -152,7 +155,7 @@ namespace Entite
 	void WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
+		m_Context->SwapBuffers();
 	}
 
 	void WindowsWindow::SetVSyc(bool enabled)
