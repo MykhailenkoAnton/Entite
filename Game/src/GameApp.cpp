@@ -1,6 +1,8 @@
 #include "Entite.h"
 
 
+#include "imguiOrig/imgui.h"
+
 class ExampleLayer : public Entite::Layer
 {
 public:
@@ -14,6 +16,13 @@ public:
 		{
 			ENT_INFO("Preesed poll");
 		}
+	}
+
+	virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hello world");
+		ImGui::End();
 	}
 
 	void OnEvent(Entite::Event& event) override
@@ -39,7 +48,7 @@ public:
 	Game()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Entite::ImGuiLayer());
+		//PushOverlay(new Entite::ImGuiLayer());
 	}
 	~Game()
 	{

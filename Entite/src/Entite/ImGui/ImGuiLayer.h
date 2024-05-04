@@ -14,13 +14,14 @@ namespace Entite {
 		ImGuiLayer();
 		~ImGuiLayer();
 
-		void OnAttach();
-		void OnDetach();
-		void OnUpdate();
-		void OnEvent(Event& event);
-	private:
+		virtual void OnAttach() override;
+		virtual void OnDetach() override;
+		virtual void OnImGuiRender() override;
+		//void OnEvent(Event& event);
+		void Begin();
+		void End();
 
-		bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& e);
+		/*bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& e);
 		bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e);
 		bool OnMouseButtonMovedEvent(MouseMovedEvent& e);
 		bool OnMouseButtonScrollEvent(MouseScrolledEvent& e);
@@ -29,7 +30,7 @@ namespace Entite {
 		bool OnKeyReleasedEvent(KeyReleasedEvent& e);
 		bool OnKeyTypedEvent(KeyTypedEvent& e);
 
-		bool OnWindowsResizeEvent(WindowResizeEvent& e);
+		bool OnWindowsResizeEvent(WindowResizeEvent& e);*/
 
 	private:
 

@@ -7,6 +7,8 @@
 
 #include "Entite/Events/ApplicationEvent.h"
 
+#include "Entite/ImGui/ImGuiLayer.h"
+
 namespace Entite {
 
 	class ENTITE_API Application
@@ -29,6 +31,8 @@ namespace Entite {
 
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
+
+		ImGuiLayer* m_ImGuiLayer;
 
 		LayerStack m_LayerStack;
 	private:

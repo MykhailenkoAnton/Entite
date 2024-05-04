@@ -29,9 +29,10 @@ group ""
 
 project "Entite"
 	location "Entite"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -46,6 +47,11 @@ project "Entite"
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl",
 		"%{prj.name}/vendor/glm/glm/**.cppm"
+	}
+
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
 	}
 
 	includedirs
@@ -70,7 +76,7 @@ project "Entite"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
+		--cppdialect "C++17"
 		--staticruntime "On"
 		systemversion "latest"
 
@@ -78,38 +84,40 @@ project "Entite"
 		{
 			"ENT_PLATFORM_WINDOWS",
 			"ENTITE_BUILD_DLL",
-			"GLFW_INCLUDE_NONE"
+			"GLFW_INCLUDE_NONE",
+			--"_CRT_SECURE_NO_WARNINGS"
 		}
 
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Game/\"")
+		--postbuildcommands
+		--{
+			--("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Game/\"")
 			-- old ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Game")
-		}
+		--}
 
 	filter "configurations:Debug"
 		defines "ENT_DEBUG"
 		--buildoptions "/MDd"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "ENT_RELEASE"
 		--buildoptions "/MD"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "ENT_DIST"
 		--buildoptions "/MD"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 project "Game"
 	location "Game"
 	kind "ConsoleApp"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -124,6 +132,7 @@ project "Game"
 	{
 		"Entite/vendor/spdlog/include",
 		"Entite/src",
+		"Entite/vendor",
 		"%{IncludeDir.glm}"
 	}
 
@@ -133,7 +142,7 @@ project "Game"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
+		--cppdialect "C++17"
 		--staticruntime "On"
 		systemversion "latest"
 
@@ -146,16 +155,16 @@ project "Game"
 		defines "ENT_DEBUG"
 		--buildoptions "/MDd"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "ENT_RELEASE"
 		--buildoptions "/MD"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "ENT_DIST"
 		--buildoptions "/MD"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
