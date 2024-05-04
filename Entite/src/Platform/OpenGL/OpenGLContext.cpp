@@ -16,6 +16,11 @@ namespace Entite {
 		glfwMakeContextCurrent(m_windowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		ENT_CORE_ASSERT(status, "Failed to initialize Glad!");
+
+		ENT_CORE_INFO("OpenGL Info:");
+		ENT_CORE_INFO("Vendor: {0}", (const char*)glGetString(GL_VENDOR));
+		ENT_CORE_INFO("Renderer: {0}", (const char*)glGetString(GL_RENDERER));
+		ENT_CORE_INFO("Version: {0}", (const char*)glGetString(GL_VERSION));
 	}
 	void OpenGLContext::SwapBuffers()
 	{
