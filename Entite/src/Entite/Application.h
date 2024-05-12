@@ -9,6 +9,8 @@
 
 #include "Entite/ImGui/ImGuiLayer.h"
 
+#include "Entite/Renderer/Shader.h"
+
 namespace Entite {
 
 	class ENTITE_API Application
@@ -37,6 +39,7 @@ namespace Entite {
 		LayerStack m_LayerStack;
 
 		unsigned int m_VertexArray, m_VertexBuffer, m_IndexBuffer;
+		std::unique_ptr<Shader> m_Shader;
 	private:
 		static Application* s_Instance;
 	};

@@ -1349,6 +1349,7 @@
     </ClInclude>
     <ClInclude Include="src\Entite\Renderer\GraphicsContexti.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
+    <ClInclude Include="src\Entite\Renderer\Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entite\Application.cpp">
@@ -1379,6 +1380,7 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp" />
+    <ClCompile Include="src\Entite\Renderer\Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\glm\glm\glm.cppm">
