@@ -1355,6 +1355,9 @@
     <ClInclude Include="src\Entite\Renderer\Renderer.h" />
     <ClInclude Include="src\Entite\Renderer\VertexArray.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
+    <ClInclude Include="src\Entite\Renderer\RendererAPI.h" />
+    <ClInclude Include="src\Entite\Renderer\RenderCommand.h" />
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Entite\Application.cpp">
@@ -1391,6 +1394,9 @@
     <ClCompile Include="src\Entite\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Entite\Renderer\VertexArray.cpp" />
     <ClCompile Include="src\Platform\OpenGL\OpenGLVertexArray.cpp" />
+    <ClCompile Include="src\Entite\Renderer\RendererAPI.cpp" />
+    <ClCompile Include="src\Entite\Renderer\RenderCommand.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="vendor\glm\glm\glm.cppm">
