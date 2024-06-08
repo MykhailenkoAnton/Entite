@@ -15,6 +15,8 @@
 
 #include "Entite/Renderer/VertexArray.h"
 
+#include "Entite/Renderer/OrthographicCamera.h"
+
 namespace Entite {
 
 	class ENTITE_API Application
@@ -47,6 +49,8 @@ namespace Entite {
 
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_SquareVA;
+
+		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};
