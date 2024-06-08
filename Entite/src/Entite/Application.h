@@ -9,13 +9,13 @@
 
 #include "Entite/ImGui/ImGuiLayer.h"
 
-#include "Entite/Renderer/Shader.h"
-
-#include "Entite/Renderer/Buffer.h"
-
-#include "Entite/Renderer/VertexArray.h"
-
-#include "Entite/Renderer/OrthographicCamera.h"
+//#include "Entite/Renderer/Shader.h"
+//
+//#include "Entite/Renderer/Buffer.h"
+//
+//#include "Entite/Renderer/VertexArray.h"
+//
+//#include "Entite/Renderer/OrthographicCamera.h"
 
 namespace Entite {
 
@@ -43,14 +43,6 @@ namespace Entite {
 		ImGuiLayer* m_ImGuiLayer;
 
 		LayerStack m_LayerStack;
-
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
-
-		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};

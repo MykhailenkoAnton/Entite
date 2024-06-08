@@ -12,6 +12,20 @@
 #include "Entite/KeyCodes.h"
 #include "Entite/MouseButtonCodes.h"
 
+
+// -----Renderer-----------------------
+#include "Entite/Renderer/Renderer.h"
+#include "Entite/Renderer/RenderCommand.h"
+
+#include "Entite/Renderer/Buffer.h"
+#include "Entite/Renderer/Shader.h"
+#include "Entite/Renderer/VertexArray.h"
+
+#include "Entite/Renderer/OrthographicCamera.h"
+
+// ----------------------------
+
+
 // -----ENTRY POINT-----------------------
 #include "Entite/EntryPoint.h"
 // ---------------------------------------
