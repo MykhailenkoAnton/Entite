@@ -6,6 +6,8 @@
 #include "Entite/Layer.h"
 #include "Entite/Log.h"
 
+#include "Entite/Core/Timestep.h"
+
 #include "Entite/ImGui/ImGuiLayer.h"
 
 #include "Entite/Input.h"

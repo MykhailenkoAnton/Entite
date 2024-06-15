@@ -143,6 +143,7 @@
     <ClInclude Include="src\Entite.h" />
     <ClInclude Include="src\Entite\Application.h" />
     <ClInclude Include="src\Entite\Core.h" />
+    <ClInclude Include="src\Entite\Core\Timestep.h" />
     <ClInclude Include="src\Entite\EntryPoint.h" />
     <ClInclude Include="src\Entite\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Entite\Events\Event.h" />

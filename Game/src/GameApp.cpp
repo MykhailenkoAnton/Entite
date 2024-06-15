@@ -122,33 +122,33 @@ public:
 		m_BlueShader.reset(new Entite::Shader(blueShaderVertexSrc, blueShaderFragmentSrc));
 	}
 
-	void OnUpdate() override
+	void OnUpdate(Entite::Timestep ts) override
 	{
 		if (Entite::Input::IsKeyPressed(ENT_KEY_LEFT))
 		{
-			m_CameraPosition.x -= m_CameraMoveSpeed;
+			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
 		}
 		else if (Entite::Input::IsKeyPressed(ENT_KEY_RIGHT))
 		{
-			m_CameraPosition.x += m_CameraMoveSpeed;
+			m_CameraPosition.x += m_CameraMoveSpeed * ts;
 		}
 
 		if (Entite::Input::IsKeyPressed(ENT_KEY_UP))
 		{
-			m_CameraPosition.y += m_CameraMoveSpeed;
+			m_CameraPosition.y += m_CameraMoveSpeed * ts;
 		}
 		else if (Entite::Input::IsKeyPressed(ENT_KEY_DOWN))
 		{
-			m_CameraPosition.y -= m_CameraMoveSpeed;
+			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
 		}
 
 		if (Entite::Input::IsKeyPressed(ENT_KEY_A))
 		{
-			m_CameraRotation -= m_CameraRotationSpeed;
+			m_CameraRotation -= m_CameraRotationSpeed * ts;
 		}
 		else if (Entite::Input::IsKeyPressed(ENT_KEY_D))
 		{
-			m_CameraRotation += m_CameraRotationSpeed;
+			m_CameraRotation += m_CameraRotationSpeed * ts;
 		}
 
 		Entite::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
@@ -182,10 +182,12 @@ private:
 	std::shared_ptr<Entite::VertexArray> m_SquareVA;
 
 	Entite::OrthographicCamera m_Camera;
+
 	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 0.1f;
+	float m_CameraMoveSpeed = 10.0f;
+
 	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 0.1f;
+	float m_CameraRotationSpeed = 45.0f;
 
 };
 

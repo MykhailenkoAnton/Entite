@@ -4,18 +4,12 @@
 #include "Events/Event.h"
 #include "Window.h"
 #include "Entite/LayerStack.h"
-
 #include "Entite/Events/ApplicationEvent.h"
+
+#include "Entite/Core/Timestep.h"
 
 #include "Entite/ImGui/ImGuiLayer.h"
 
-//#include "Entite/Renderer/Shader.h"
-//
-//#include "Entite/Renderer/Buffer.h"
-//
-//#include "Entite/Renderer/VertexArray.h"
-//
-//#include "Entite/Renderer/OrthographicCamera.h"
 
 namespace Entite {
 
@@ -37,14 +31,18 @@ namespace Entite {
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 
+	private:
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
 
 		ImGuiLayer* m_ImGuiLayer;
 
 		LayerStack m_LayerStack;
+
+		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
+
 	};
 
 	// To be defined on a CLIENT
