@@ -20,7 +20,7 @@ public:
 			0.0f, 0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f,
 		};
 
-		std::shared_ptr<Entite::VertexBuffer> vertexBuffer;
+		Entite::Ref<Entite::VertexBuffer> vertexBuffer;
 		vertexBuffer.reset(Entite::VertexBuffer::Create(vertices, sizeof(vertices)));
 		Entite::BufferLayout layout = {
 				{Entite::ShaderDataType::Float3, "a_Position" },
@@ -30,7 +30,7 @@ public:
 		m_VertexArray->AddVertexBuffer(vertexBuffer);
 
 		uint32_t indices[3] = { 0, 1, 2 };
-		std::shared_ptr<Entite::IndexBuffer> indexBuffer;
+		Entite::Ref<Entite::IndexBuffer> indexBuffer;
 		indexBuffer.reset(Entite::IndexBuffer::Create(indices, sizeof(indices) / sizeof(uint32_t)));
 		m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -42,7 +42,7 @@ public:
 			0.5f, 0.5f, 0.0f,
 			-0.5f, 0.5f, 0.0f
 		};
-		std::shared_ptr<Entite::VertexBuffer> squareBP; 
+		Entite::Ref<Entite::VertexBuffer> squareBP; 
 		squareBP.reset(Entite::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
 		squareBP->SetLayout({
 			{Entite::ShaderDataType::Float3, "a_Position" }
@@ -50,7 +50,7 @@ public:
 		m_SquareVA->AddVertexBuffer(squareBP);
 
 		uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-		std::shared_ptr<Entite::IndexBuffer> squareIB; 
+		Entite::Ref<Entite::IndexBuffer> squareIB; 
 		squareIB.reset((Entite::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t))));
 		m_SquareVA->SetIndexBuffer(squareIB);
 
@@ -201,11 +201,11 @@ public:
 
 private:
 
-	std::shared_ptr<Entite::Shader> m_Shader;
-	std::shared_ptr<Entite::VertexArray> m_VertexArray;
+	Entite::Ref<Entite::Shader> m_Shader;
+	Entite::Ref<Entite::VertexArray> m_VertexArray;
 
-	std::shared_ptr<Entite::Shader> m_FlatColorShader;
-	std::shared_ptr<Entite::VertexArray> m_SquareVA;
+	Entite::Ref<Entite::Shader> m_FlatColorShader;
+	Entite::Ref<Entite::VertexArray> m_SquareVA;
 
 	Entite::OrthographicCamera m_Camera;
 
