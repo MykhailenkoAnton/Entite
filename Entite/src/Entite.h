@@ -21,6 +21,7 @@
 
 #include "Entite/Renderer/Buffer.h"
 #include "Entite/Renderer/Shader.h"
+#include "Entite/Renderer/Texture.h"
 #include "Entite/Renderer/VertexArray.h"
 
 #include "Entite/Renderer/OrthographicCamera.h"

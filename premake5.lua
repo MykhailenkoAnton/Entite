@@ -18,6 +18,7 @@ IncludeDir["Glad"] = "Entite/vendor/Glad/include"
 --IncludeDir["ImGui"] = "Entite/vendor/imgui"
 IncludeDir["ImGuiOrig"] = "Entite/vendor/imguiOrig"
 IncludeDir["glm"] = "Entite/vendor/glm"
+IncludeDir["stb_image"] = "Entite/vendor/stb_image"
 
 group "Dependencies"
 	include "Entite/vendor/GLFW"
@@ -44,6 +45,8 @@ project "Entite"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl",
 		"%{prj.name}/vendor/glm/glm/**.cppm"
@@ -62,7 +65,8 @@ project "Entite"
 		"%{IncludeDir.Glad}",
 		--"%{IncludeDir.ImGui}"
 		"%{IncludeDir.ImGuiOrig}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links
