@@ -7,6 +7,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+
 class ExampleLayer : public Entite::Layer
 {
 public:
@@ -92,7 +93,7 @@ public:
 			
 		)";
 
-		m_Shader.reset(Entite::Shader::Create(vertexSrc, fragmentSrc));
+		m_Shader = Entite::Shader::Create("VertexPosColor", vertexSrc, fragmentSrc);
 
 		std::string flatColorShaderVertexSrc = R"(
 			#version 330 core
@@ -128,15 +129,15 @@ public:
 			
 		)";
 
-		m_FlatColorShader.reset(Entite::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
-
-		m_TextureShader.reset(Entite::Shader::Create("assets/shaders/Texture.glsl"));
+		m_FlatColorShader = Entite::Shader::Create("FlatColor", flatColorShaderVertexSrc, flatColorShaderFragmentSrc);
+	
+		auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
 
 		m_Texture = Entite::Texture2D::Create("assets/textures/Checkerboard.png");
 		m_ChernoLogoTexture = Entite::Texture2D::Create("assets/textures/ChernoLogo.png");
 
-		std::dynamic_pointer_cast<Entite::OpenGLShader>(m_TextureShader)->Bind();
-		std::dynamic_pointer_cast<Entite::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+		std::dynamic_pointer_cast<Entite::OpenGLShader>(textureShader)->Bind();
+		std::dynamic_pointer_cast<Entite::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Entite::Timestep ts) override
@@ -192,10 +193,12 @@ public:
 			}
 		}
 
+		auto textureShader = m_ShaderLibrary.Get("Texture");
+
 		m_Texture->Bind();
-		Entite::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		Entite::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 		m_ChernoLogoTexture->Bind();
-		Entite::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		Entite::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		//triangle
 		//Entite::Renderer::Submit(m_Shader, m_VertexArray);
@@ -215,11 +218,13 @@ public:
 	}
 
 private:
+	
+	Entite::ShaderLibrary m_ShaderLibrary;
 
 	Entite::Ref<Entite::Shader> m_Shader;
 	Entite::Ref<Entite::VertexArray> m_VertexArray;
 
-	Entite::Ref<Entite::Shader> m_FlatColorShader, m_TextureShader;
+	Entite::Ref<Entite::Shader> m_FlatColorShader;
 	Entite::Ref<Entite::VertexArray> m_SquareVA;
 
 	Entite::Ref<Entite::Texture2D> m_Texture, m_ChernoLogoTexture;
