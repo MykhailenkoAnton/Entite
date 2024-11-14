@@ -30,10 +30,12 @@ namespace Entite {
 		inline Window& GetWindow() { return *m_Window; }
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
+		bool OnWindowResize(WindowResizeEvent& e);
 
 	private:
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
+		bool m_Minimized = false;
 
 		ImGuiLayer* m_ImGuiLayer;
 
