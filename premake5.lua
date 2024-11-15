@@ -86,7 +86,7 @@ project "Entite"
 
 		defines
 		{
-			"ENT_PLATFORM_WINDOWS",
+			--"ENT_PLATFORM_WINDOWS",
 			"ENTITE_BUILD_DLL",
 			"GLFW_INCLUDE_NONE",
 			--"_CRT_SECURE_NO_WARNINGS"
@@ -152,7 +152,7 @@ project "Game"
 
 		defines
 		{
-			"ENT_PLATFORM_WINDOWS"
+			--"ENT_PLATFORM_WINDOWS"
 		}
 
 	filter "configurations:Debug"
