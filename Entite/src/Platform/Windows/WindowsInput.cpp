@@ -1,7 +1,7 @@
 #include "entpch.h"
 #include "WindowsInput.h"
 
-#include "Entite/Application.h"
+#include "Entite/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 namespace Entite {

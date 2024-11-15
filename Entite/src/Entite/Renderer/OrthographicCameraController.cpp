@@ -1,8 +1,8 @@
 #include "entpch.h"
 
 #include "OrthographicCameraController.h"
-#include "Entite/Input.h"
-#include "Entite/KeyCodes.h"
+#include "Entite/Core/Input.h"
+#include "Entite/Core/KeyCodes.h"
 
 namespace Entite {
 

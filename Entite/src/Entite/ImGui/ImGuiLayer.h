@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Entite/Layer.h"
+#include "Entite/Core/Layer.h"
 
 #include "Entite/Events/KeyEvent.h"
 #include "Entite/Events/MouseEvent.h"

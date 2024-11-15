@@ -1,10 +1,10 @@
 #pragma once
 
 #include "Entite/Core/Timestep.h"
-#include "Renderer/OrthographicCamera.h"
+#include "Entite/Renderer/OrthographicCamera.h"
 
-#include "Events/ApplicationEvent.h"
-#include "Events/MouseEvent.h"
+#include "Entite/Events/ApplicationEvent.h"
+#include "Entite/Events/MouseEvent.h"
 
 namespace Entite {
 

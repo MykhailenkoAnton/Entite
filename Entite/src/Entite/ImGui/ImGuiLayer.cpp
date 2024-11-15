@@ -3,7 +3,7 @@
 
 //#include "Platform/OpenGL/ImGuiOpenGLRenderer.h"
 
-#include "Entite/Application.h"
+#include "Entite/Core/Application.h"
 
 // temp start
 #include "GLFW/glfw3.h"

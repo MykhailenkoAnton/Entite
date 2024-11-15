@@ -2,18 +2,18 @@
 
 // For Entite App
 
-#include "Entite/Application.h"
-#include "Entite/Layer.h"
-#include "Entite/Log.h"
+#include "Entite/Core/Application.h"
+#include "Entite/Core/Layer.h"
+#include "Entite/Core/Log.h"
 
 #include "Entite/Core/Timestep.h"
 
 #include "Entite/ImGui/ImGuiLayer.h"
 
-#include "Entite/Input.h"
-#include "Entite/KeyCodes.h"
-#include "Entite/MouseButtonCodes.h"
-#include "Entite/OrthographicCameraController.h"
+#include "Entite/Core/Input.h"
+#include "Entite/Core/KeyCodes.h"
+#include "Entite/Core/MouseButtonCodes.h"
+#include "Entite/Renderer/OrthographicCameraController.h"
 
 
 // -----Renderer-----------------------
@@ -31,5 +31,5 @@
 
 
 // -----ENTRY POINT-----------------------
-#include "Entite/EntryPoint.h"
+#include "Entite/Core/EntryPoint.h"
 // ---------------------------------------

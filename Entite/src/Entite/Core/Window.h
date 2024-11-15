@@ -1,7 +1,7 @@
 #pragma once
 
 #include "entpch.h"
-#include "Entite/Core.h"
+#include "Entite/Core/Core.h"
 #include "Entite/Events/Event.h"
 
 

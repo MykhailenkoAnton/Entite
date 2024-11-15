@@ -14,7 +14,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Entite/Log.h"
+#include "Entite/Core/Log.h"
 
 #ifdef ENT_PLATFORM_WINDOWS
 #include "Windows.h"

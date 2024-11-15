@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "Entite/Core.h"
+#include "Entite/Core/Core.h"
 
 namespace Entite {
 

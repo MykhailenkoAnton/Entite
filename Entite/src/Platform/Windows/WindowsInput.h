@@ -1,5 +1,5 @@
 #pragma once
-#include "Entite/Input.h"
+#include "Entite/Core/Input.h"
 
 namespace Entite {
 

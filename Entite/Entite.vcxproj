@@ -141,32 +141,32 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Entite.h" />
-    <ClInclude Include="src\Entite\Application.h" />
-    <ClInclude Include="src\Entite\Core.h" />
+    <ClInclude Include="src\Entite\Core\Application.h" />
+    <ClInclude Include="src\Entite\Core\Core.h" />
+    <ClInclude Include="src\Entite\Core\EntryPoint.h" />
+    <ClInclude Include="src\Entite\Core\Input.h" />
+    <ClInclude Include="src\Entite\Core\KeyCodes.h" />
+    <ClInclude Include="src\Entite\Core\Layer.h" />
+    <ClInclude Include="src\Entite\Core\LayerStack.h" />
+    <ClInclude Include="src\Entite\Core\Log.h" />
+    <ClInclude Include="src\Entite\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\Entite\Core\Timestep.h" />
-    <ClInclude Include="src\Entite\EntryPoint.h" />
+    <ClInclude Include="src\Entite\Core\Window.h" />
     <ClInclude Include="src\Entite\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Entite\Events\Event.h" />
     <ClInclude Include="src\Entite\Events\KeyEvent.h" />
     <ClInclude Include="src\Entite\Events\MouseEvent.h" />
     <ClInclude Include="src\Entite\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Entite\Input.h" />
-    <ClInclude Include="src\Entite\KeyCodes.h" />
-    <ClInclude Include="src\Entite\Layer.h" />
-    <ClInclude Include="src\Entite\LayerStack.h" />
-    <ClInclude Include="src\Entite\Log.h" />
-    <ClInclude Include="src\Entite\MouseButtonCodes.h" />
-    <ClInclude Include="src\Entite\OrthographicCameraController.h" />
     <ClInclude Include="src\Entite\Renderer\Buffer.h" />
     <ClInclude Include="src\Entite\Renderer\GraphicsContexti.h" />
     <ClInclude Include="src\Entite\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\Entite\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\Entite\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Entite\Renderer\Renderer.h" />
     <ClInclude Include="src\Entite\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Entite\Renderer\Shader.h" />
     <ClInclude Include="src\Entite\Renderer\Texture.h" />
     <ClInclude Include="src\Entite\Renderer\VertexArray.h" />
-    <ClInclude Include="src\Entite\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
@@ -595,15 +595,15 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Entite\Application.cpp" />
+    <ClCompile Include="src\Entite\Core\Application.cpp" />
+    <ClCompile Include="src\Entite\Core\Layer.cpp" />
+    <ClCompile Include="src\Entite\Core\LayerStack.cpp" />
+    <ClCompile Include="src\Entite\Core\Log.cpp" />
     <ClCompile Include="src\Entite\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Entite\ImGui\ImGuiOrigBuild.cpp" />
-    <ClCompile Include="src\Entite\Layer.cpp" />
-    <ClCompile Include="src\Entite\LayerStack.cpp" />
-    <ClCompile Include="src\Entite\Log.cpp" />
-    <ClCompile Include="src\Entite\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Entite\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Entite\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="src\Entite\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Entite\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\Entite\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Entite\Renderer\RendererAPI.cpp" />
