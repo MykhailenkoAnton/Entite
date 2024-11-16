@@ -26,10 +26,4 @@
 #include "Entite/Renderer/VertexArray.h"
 
 #include "Entite/Renderer/OrthographicCamera.h"
-
 // ----------------------------
-
-
-// -----ENTRY POINT-----------------------
-#include "Entite/Core/EntryPoint.h"
-// ---------------------------------------
