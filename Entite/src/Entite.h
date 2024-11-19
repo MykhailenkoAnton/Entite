@@ -18,6 +18,7 @@
 
 // -----Renderer-----------------------
 #include "Entite/Renderer/Renderer.h"
+#include "Entite/Renderer/Renderer2D.h"
 #include "Entite/Renderer/RenderCommand.h"
 
 #include "Entite/Renderer/Buffer.h"
