@@ -143,6 +143,7 @@
     <ClInclude Include="src\Entite.h" />
     <ClInclude Include="src\Entite\Core\Application.h" />
     <ClInclude Include="src\Entite\Core\Core.h" />
+    <ClInclude Include="src\Entite\Debug\Instrumentor.h" />
     <ClInclude Include="src\Entite\Core\EntryPoint.h" />
     <ClInclude Include="src\Entite\Core\Input.h" />
     <ClInclude Include="src\Entite\Core\KeyCodes.h" />

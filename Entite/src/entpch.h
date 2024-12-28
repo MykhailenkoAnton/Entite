@@ -15,6 +15,7 @@
 #include <unordered_set>
 
 #include "Entite/Core/Log.h"
+#include "Entite/Debug/Instrumentor.h"
 
 #ifdef ENT_PLATFORM_WINDOWS
 #include "Windows.h"
