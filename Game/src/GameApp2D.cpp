@@ -12,25 +12,25 @@ GameApp2D::GameApp2D()
 
 void GameApp2D::OnAttach()
 {
+	ENT_PROFILE_FUNCTION();
+
 	m_CheckerboardTexture = Entite::Texture2D::Create("assets/textures/Checkerboard.png");
 }
 
 void GameApp2D::OnDetach()
 {
+	ENT_PROFILE_FUNCTION();
 }
 
 void GameApp2D::OnUpdate(Entite::Timestep ts)
 {
 	ENT_PROFILE_FUNCTION();
 
-	{
-		ENT_PROFILE_SCOPE("CameraController::OnUpdate");
-		m_CameraController.OnUpdate(ts);
-	}
+	m_CameraController.OnUpdate(ts);
 
+	// Render
 	{
 		ENT_PROFILE_SCOPE("Renderer Prep");
-		// Render
 		Entite::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		Entite::RenderCommand::Clear();
 	}

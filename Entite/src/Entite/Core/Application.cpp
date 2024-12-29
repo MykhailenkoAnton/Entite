@@ -15,6 +15,8 @@ namespace Entite {
 
 	Application::Application()
 	{
+		ENT_PROFILE_FUNCTION();
+
 		ENT_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
 
@@ -29,12 +31,15 @@ namespace Entite {
 
 	Application::~Application()
 	{
+		ENT_PROFILE_FUNCTION();
 
-
+		Renderer::Shutdown();
 	}
 
 	void Application::OnEvent(Event& e)
 	{
+		ENT_PROFILE_FUNCTION();
+
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
@@ -51,12 +56,16 @@ namespace Entite {
 
 	void Application::PushLayer(Layer* layer)
 	{
+		ENT_PROFILE_FUNCTION();
+
 		m_LayerStack.PushLayer(layer);
 		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* overlay)
 	{
+		ENT_PROFILE_FUNCTION();
+
 		m_LayerStack.PushOverlay(overlay);
 		overlay->OnAttach();
 	}
@@ -69,6 +78,8 @@ namespace Entite {
 
 	bool Application::OnWindowResize(WindowResizeEvent& e)
 	{
+		ENT_PROFILE_FUNCTION();
+
 		if (e.GetWidth() == 0 || e.GetHeight() == 0)
 		{
 			m_Minimized = true;
@@ -83,26 +94,37 @@ namespace Entite {
 
 	void Application::Run()
 	{
+		ENT_PROFILE_FUNCTION();
+
 		while (m_Running)
 		{
+			ENT_PROFILE_SCOPE("RunLoop");
+
 			float time = (float)glfwGetTime(); // Platform::GetTime
 			Timestep timestep = time - m_LastFrameTime;
 			m_LastFrameTime = time;
 
 			if (!m_Minimized)
 			{
-				for (Layer* layer : m_LayerStack)
 				{
-					layer->OnUpdate(timestep);
-				}
-			}
+					ENT_PROFILE_SCOPE("LayerStack OnUpdate");
 
-			m_ImGuiLayer->Begin();
-			for (Layer* layer : m_LayerStack)
-			{
-				layer->OnImGuiRender();
+					for (Layer* layer : m_LayerStack)
+					{
+						layer->OnUpdate(timestep);
+					}
+				}
+
+				m_ImGuiLayer->Begin();
+				{
+					ENT_PROFILE_SCOPE("LayerStack OnImGuiRender");
+					for (Layer* layer : m_LayerStack)
+					{
+						layer->OnImGuiRender();
+					}
+				}
+				m_ImGuiLayer->End();
 			}
-			m_ImGuiLayer->End();
 
 			m_Window->OnUpdate();
 		}

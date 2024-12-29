@@ -20,6 +20,8 @@ namespace Entite {
 
 	void Renderer2D::Init()
 	{
+		ENT_PROFILE_FUNCTION();
+
 		s_Data = new Renderer2DStorage();
 		s_Data->QuadVertexArray = VertexArray::Create();
 
@@ -53,8 +55,10 @@ namespace Entite {
 
 	}
 
-	void Renderer2D::Shutdowm()
+	void Renderer2D::Shutdown()
 	{
+		ENT_PROFILE_FUNCTION();
+
 		if (s_Data)
 		{
 			delete s_Data;
@@ -63,13 +67,15 @@ namespace Entite {
 
 	void Renderer2D::BeginScene(const OrthographicCamera& camera)
 	{
+		ENT_PROFILE_FUNCTION();
+
 		s_Data->TextureShader->Bind();
 		s_Data->TextureShader->SetMat4("u_ViewProjection", camera.GetViewProjectionMatrix());
 	}
 
 	void Renderer2D::EndScene()
 	{
-
+		ENT_PROFILE_FUNCTION();
 	}
 
 	// Primitivies
@@ -80,6 +86,8 @@ namespace Entite {
 
 	void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const glm::vec4& color)
 	{
+		ENT_PROFILE_FUNCTION();
+
 		s_Data->TextureShader->SetFloat4("u_Color", color);
 		// Bind white texture here
 		s_Data->WhiteTexture->Bind();
@@ -99,6 +107,8 @@ namespace Entite {
 
 	void Renderer2D::DrawQuad(const glm::vec3& position, const glm::vec2& size, const Ref<Texture2D>& texture)
 	{
+		ENT_PROFILE_FUNCTION();
+
 		s_Data->TextureShader->SetFloat4("u_Color", glm::vec4(1.0f));
 		texture->Bind();
 

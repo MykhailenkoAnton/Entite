@@ -11,8 +11,15 @@ namespace Entite {
 
 	void Renderer::Init()
 	{
+		ENT_PROFILE_FUNCTION();
+
 		RenderCommand::Init();
 		Renderer2D::Init();
+	}
+
+	void Renderer::Shutdown()
+	{
+		Renderer2D::Shutdown();
 	}
 
 	void Renderer::OnWindowResize(uint32_t width, uint32_t height)
@@ -24,6 +31,7 @@ namespace Entite {
 	{
 		m_SceneData->ViewProjectionMatrix = camera.GetViewProjectionMatrix();
 	}
+
 
 	void Renderer::EndScene()
 	{

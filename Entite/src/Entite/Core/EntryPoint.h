@@ -10,7 +10,7 @@ int main(int argc, char** argv)
 	//ENT_CORE_WARN("Initializer log!");
 	//ENT_INFO("123...!");
 
-	ENT_PROFILE_BEGIN_SESSION("Startup", "EntiteProfile-Sratrup.json");
+	ENT_PROFILE_BEGIN_SESSION("Startup", "EntiteProfile-Startup.json");
 	auto app = Entite::CreateApplication();
 	ENT_PROFILE_END_SESSION();
 
