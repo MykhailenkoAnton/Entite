@@ -4,6 +4,7 @@ bin/
 bin-int/
 # Entite/vendor/imgui/
 Game/EntiteProfile-*.json
+Game/*.ini
 
 # Files
 *.user
