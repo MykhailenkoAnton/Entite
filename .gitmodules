@@ -7,7 +7,3 @@
 [submodule "Entite/vendor/glm"]
 	path = Entite/vendor/glm
 	url = https://github.com/g-truc/glm
-[submodule "Entite/vendor/imguiDocking"]
-	path = Entite/vendor/imguiDocking
-	url = https://github.com/ocornut/imgui.git
-	branch = docking
