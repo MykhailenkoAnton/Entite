@@ -49,7 +49,7 @@ project "Entite"
 		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl",
-		"%{prj.name}/vendor/glm/glm/**.cppm"
+		--"%{prj.name}/vendor/glm/glm/**.cppm"
 	}
 
 	defines
@@ -172,3 +172,4 @@ project "Game"
 		--buildoptions "/MD"
 		runtime "Release"
 		optimize "on"
+		-- Genereal Info: Try set in studoi runtime library. If not uncomment build options

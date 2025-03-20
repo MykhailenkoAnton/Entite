@@ -2,6 +2,11 @@
 .vs/
 bin/
 bin-int/
+# Entite/vendor/imgui/
+Game/EntiteProfile-*.json
 
 # Files
 *.user
+*.sln
+*.vcxproj
+*.vcxproj.filters
