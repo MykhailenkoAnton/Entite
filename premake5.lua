@@ -15,18 +15,14 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Entite/vendor/GLFW/include"
 IncludeDir["Glad"] = "Entite/vendor/Glad/include"
---IncludeDir["ImGui"] = "Entite/vendor/imgui"
---IncludeDir["ImGuiOrig"] = "Entite/vendor/imguiOrig"
-IncludeDir["ImGuiDocking"] = "Entite/vendor/imguiDocking"
+IncludeDir["ImGui"] = "Entite/vendor/imgui"
 IncludeDir["glm"] = "Entite/vendor/glm"
 IncludeDir["stb_image"] = "Entite/vendor/stb_image"
 
 group "Dependencies"
 	include "Entite/vendor/GLFW"
 	include "Entite/vendor/Glad"
-	--include "Entite/vendor/imgui"
-	--include "Entite/vendor/imguiOrig"
-	include "Entite/vendor/imguiDocking"
+	include "Entite/vendor/imgui"
 
 group ""
 
@@ -65,9 +61,7 @@ project "Entite"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		--"%{IncludeDir.ImGui}",
-		--"%{IncludeDir.ImGuiOrig}",
-		"%{IncludeDir.ImGuiDocking}",
+		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb_image}"
 	}
@@ -76,9 +70,7 @@ project "Entite"
 	{
 		"GLFW",
 		"Glad",
-		--"ImGui",
-		--"ImGuiOrig",
-		"ImGuiDocking",
+		"ImGui",
 		"opengl32.lib",
 		"dwmapi.lib"
 	}
